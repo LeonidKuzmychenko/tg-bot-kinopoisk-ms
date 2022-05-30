@@ -1,1 +1,1 @@
-# telegram-kinopoisk-microservice-
+tg-bot-kinopoisk-ms

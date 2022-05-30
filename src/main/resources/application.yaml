@@ -1,0 +1,14 @@
+server:
+  port: 9090
+
+kinopoisk:
+  auth:
+    header:
+      name: X-API-KEY
+      value: ${API_TOKEN}
+  scheme: https
+  host: kinopoiskapiunofficial.tech
+  url:
+    search-serial-by-serial-name: /api/v2.1/films/search-by-keyword?keyword={keyword}
+    episodes-info-by-serial-id: /api/v2.2/films/{id}/seasons
+    serial-info-by-serial-id: /api/v2.2/films/{id}

@@ -1,12 +1,12 @@
 package tg.project.kinopoisk.controllers;
 
-import tg.project.kinopoisk.dtos.SearchByNameDto;
-import tg.project.kinopoisk.dtos.SerialWithReleaseTodayEpisodes;
-import tg.project.kinopoisk.services.SerialService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import tg.project.kinopoisk.dtos.SearchByNameDto;
+import tg.project.kinopoisk.dtos.SerialWithReleaseTodayEpisodes;
+import tg.project.kinopoisk.services.SerialService;
 
 @RestController
 @RequestMapping

@@ -1,6 +1,7 @@
 package tg.project.kinopoisk.exceptions;
 
 public class SearchByNameException extends RuntimeException {
+
     private SearchByNameException(String message) {
         super(message);
     }
@@ -16,6 +17,4 @@ public class SearchByNameException extends RuntimeException {
     public static SearchByNameException bodyIsNull() {
         return new SearchByNameException("Request body is null");
     }
-
-
 }

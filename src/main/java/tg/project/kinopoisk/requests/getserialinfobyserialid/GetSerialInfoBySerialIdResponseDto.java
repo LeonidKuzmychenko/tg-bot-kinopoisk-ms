@@ -1,4 +1,4 @@
-package tg.project.kinopoisk.requests.getserialinfobyserialid.response;
+package tg.project.kinopoisk.requests.getserialinfobyserialid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -138,5 +138,4 @@ public class GetSerialInfoBySerialIdResponseDto {
 
     @JsonProperty("completed")
     private Boolean completed;
-
 }

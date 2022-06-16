@@ -1,21 +1,27 @@
 package tg.project.kinopoisk.configurations;
 
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
-
-import java.time.Duration;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.support.WebClientAdapter;
+import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+import tg.project.kinopoisk.properties.KinopoiskProperties;
+import tg.project.kinopoisk.requests.KinopoiskApi;
 
 @Configuration
 public class KinopoiskConfiguration {
 
     @Bean
-    public RestTemplate kinopoiskRestTemplate() {
-        final RestTemplateBuilder builder = new RestTemplateBuilder();
-        builder.setConnectTimeout(Duration.ofSeconds(30));
-        builder.setReadTimeout(Duration.ofSeconds(30));
-        return builder.build();
+    public KinopoiskApi getClient(HttpServiceProxyFactory factory) {
+        return factory.createClient(KinopoiskApi.class);
     }
 
+    @Bean
+    public HttpServiceProxyFactory getHttpServiceProxyFactory(KinopoiskProperties properties) {
+        WebClient webClient = WebClient.builder()
+                .baseUrl(properties.getBaseUrl())
+                .defaultHeader(properties.getAuthHeaderKey(), properties.getAuthHeaderValue())
+                .build();
+        return new HttpServiceProxyFactory(new WebClientAdapter(webClient));
+    }
 }

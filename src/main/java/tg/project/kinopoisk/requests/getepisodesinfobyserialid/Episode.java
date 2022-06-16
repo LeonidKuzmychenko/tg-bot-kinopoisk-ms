@@ -1,4 +1,4 @@
-package tg.project.kinopoisk.requests.getepisodesinfobyserialid.response;
+package tg.project.kinopoisk.requests.getepisodesinfobyserialid;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;

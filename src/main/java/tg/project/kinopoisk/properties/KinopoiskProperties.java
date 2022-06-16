@@ -1,49 +1,21 @@
 package tg.project.kinopoisk.properties;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
-@Component
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@ConfigurationProperties(prefix = "kinopoisk")
 public class KinopoiskProperties {
 
-    @Getter
-    @Component
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    public static class Host {
-        @Value("${kinopoisk.scheme}")
-        private String sheme;
+    private final String authHeaderKey;
+    private final String authHeaderValue;
+    private final String baseUrl;
 
-        @Value("${kinopoisk.host}")
-        private String host;
+    @ConstructorBinding
+    public KinopoiskProperties(String authHeaderKey, String authHeaderValue, String baseUrl) {
+        this.authHeaderKey = authHeaderKey;
+        this.authHeaderValue = authHeaderValue;
+        this.baseUrl = baseUrl;
     }
-
-    @Getter
-    @Component
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    public static class Headers {
-        @Value("${kinopoisk.auth.header.name}")
-        private String authHeaderName;
-
-        @Value("${kinopoisk.auth.header.value}")
-        private String authHeaderValue;
-    }
-
-    @Getter
-    @Component
-    @NoArgsConstructor(access = AccessLevel.PRIVATE)
-    public static class Urls {
-        @Value("${kinopoisk.url.search-serial-by-serial-name}")
-        private String urlSearchSerialBySerialName;
-
-        @Value("${kinopoisk.url.episodes-info-by-serial-id}")
-        private String urlEpisodesInfoBySerialId;
-
-        @Value("${kinopoisk.url.serial-info-by-serial-id}")
-        private String urlSerialInfoBySerialId;
-    }
-
 }

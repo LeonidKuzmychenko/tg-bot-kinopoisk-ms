@@ -1,4 +1,4 @@
-package tg.project.kinopoisk.requests.getserialinfobyserialid.response;
+package tg.project.kinopoisk.requests.getserialinfobyserialid;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Country {
+public class Genre {
 
-    @JsonProperty("country")
-    private String country;
-
+    @JsonProperty("genre")
+    private String genre;
 }

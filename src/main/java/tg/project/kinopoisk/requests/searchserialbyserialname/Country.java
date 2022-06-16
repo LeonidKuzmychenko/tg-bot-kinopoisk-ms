@@ -1,4 +1,4 @@
-package tg.project.kinopoisk.requests.searchserialbyserialname.response;
+package tg.project.kinopoisk.requests.searchserialbyserialname;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,5 @@ import lombok.NoArgsConstructor;
 public class Country {
 
     @JsonProperty("country")
-    public String country;
-
+    private String country;
 }

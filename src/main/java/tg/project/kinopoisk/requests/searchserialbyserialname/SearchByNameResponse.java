@@ -1,4 +1,4 @@
-package tg.project.kinopoisk.requests.searchserialbyserialname.response;
+package tg.project.kinopoisk.requests.searchserialbyserialname;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -14,12 +14,14 @@ import java.util.List;
 public class SearchByNameResponse {
 
     @JsonProperty("keyword")
-    public String keyword;
-    @JsonProperty("pagesCount")
-    public Long pagesCount;
-    @JsonProperty("films")
-    public List<Film> films = new ArrayList<>();
-    @JsonProperty("searchFilmsCountResult")
-    public Long searchFilmsCountResult;
+    private String keyword;
 
+    @JsonProperty("pagesCount")
+    private Long pagesCount;
+
+    @JsonProperty("films")
+    private List<Film> films = new ArrayList<>();
+
+    @JsonProperty("searchFilmsCountResult")
+    private Long searchFilmsCountResult;
 }

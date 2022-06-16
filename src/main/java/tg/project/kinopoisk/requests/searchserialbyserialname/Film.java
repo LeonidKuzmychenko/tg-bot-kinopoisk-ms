@@ -1,11 +1,12 @@
-package tg.project.kinopoisk.requests.searchserialbyserialname.response;
+package tg.project.kinopoisk.requests.searchserialbyserialname;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tg.project.kinopoisk.dtos.SearchByNameDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tg.project.kinopoisk.dtos.SearchByNameDto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -14,31 +15,43 @@ import java.util.List;
 public class Film {
 
     @JsonProperty("filmId")
-    public Long filmId;
+    private Long filmId;
+    
     @JsonProperty("nameRu")
-    public String nameRu;
+    private String nameRu;
+    
     @JsonProperty("nameEn")
-    public String nameEn;
+    private String nameEn;
+    
     @JsonProperty("type")
-    public String type;
+    private String type;
+    
     @JsonProperty("year")
-    public String year;
+    private String year;
+    
     @JsonProperty("description")
-    public String description;
+    private String description;
+    
     @JsonProperty("filmLength")
-    public String filmLength;
+    private String filmLength;
+    
     @JsonProperty("countries")
-    public List<Country> countries = null;
+    private List<Country> countries = new ArrayList<>();
+    
     @JsonProperty("genres")
-    public List<Genre> genres = null;
+    private List<Genre> genres = new ArrayList<>();
+    
     @JsonProperty("rating")
-    public String rating;
+    private String rating;
+    
     @JsonProperty("ratingVoteCount")
-    public Long ratingVoteCount;
+    private Long ratingVoteCount;
+    
     @JsonProperty("posterUrl")
-    public String posterUrl;
+    private String posterUrl;
+    
     @JsonProperty("posterUrlPreview")
-    public String posterUrlPreview;
+    private String posterUrlPreview;
 
     public SearchByNameDto toSearchByNameDto() {
         SearchByNameDto searchByNameDto = new SearchByNameDto();
